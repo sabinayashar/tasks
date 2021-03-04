@@ -1,0 +1,156 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nett salary calculator</title>
+    <style>
+        body {font-family:Monotype Corsiva;
+              text-align:center;}
+        table, th {padding:10px;
+                   font-size:25px;
+                   border-collapse:collapse;}
+        .center {margin-left:auto;
+                 margin-right:auto;
+                 float:center;}
+        #title {margin:auto;
+                border:3px solid green;
+                font-size:35px;
+                border-radius:10px 20px 10px 20px;
+                background-color:#EEFFF3;}
+        #hiddenTable {display:flex;
+                      width:100%;
+                      justify-content:center;}
+        #hidden {width:36%;}
+        #input {background-color:#ECECEC;
+                border-radius:10px 20px 10px 20px;
+                text-align:middle;
+                margin-top:20px;}
+        input[type=submit] {width:100%;
+                            background-color:#52AD6C;
+                            color:white;
+                            padding:14px 20px;
+                            margin:8px 0;
+                            border:none;
+                            border-radius:10px 20px 10px 20px;
+                            cursor:pointer;}
+        input[type=submit]:hover {background-color:#9BD7AC;
+                                  color:black;}
+        #result {background-color:#ECECEC;
+                border-radius:10px 20px 10px 20px;
+                text-align:middle;
+                margin-top:20px;
+                font-size:35px;
+                font-weight:bold;
+                color:#52AD6C;}
+    </style>
+    <script>
+        function changed() {
+            $(".concessionClass:checked").prop("checked", false);
+            var checked = document.getElementById("check").checked;
+            var concession = document.getElementById("hidden");
+            if(checked) concession.style.display = "block";
+            else concession.style.display = "none";
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#calculate').click(function(){
+                var grossSalary = $('#grossSalary').val();
+                var year = $('#year').val();
+                var sector = $(".sectorClass:checked").val();
+                var laborFee = $('#laborFee').val();
+                var concession = $('.concessionClass:checked').val();
+                $.ajax({
+                    type:'GET',
+                    data: {grossSalary: grossSalary,
+                           year: year,
+                           sector: sector,
+                           laborFee: laborFee,
+                           concession: concession},
+                    url:'calculateNett',
+                    success: function(result){
+                        $('#result').html(result);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id = "title">Calculator for determining nett salary after certain deductions</div>
+<div id = "input">
+    <form>
+    <table class = "center">
+        <tr>
+            <th colspan = "3">Salary</th>
+            <th></th>
+            <th></th>
+            <th><input type = "text" id = "grossSalary" name = "grossSalary"></th>
+        </tr>
+        <tr>
+            <th colspan = "3">Year</th>
+            <th></th>
+            <th></th>
+            <th><input type = "text" id = "year" name = "year"></th>
+        </tr>
+        <tr>
+            <th colspan = "3">Non-oil-gas and private sector</th>
+            <th></th>
+            <th></th>
+            <th><input type = "radio" id = "ngov" name = "sector" value = "ngov" class = "sectorClass"></th>
+        </tr>
+        <tr>
+            <th colspan = "3">Public and oil-gas sector</th>
+            <th></th>
+            <th></th>
+            <th><input type = "radio" id = "gov" name = "sector" value = "gov" class = "sectorClass"></th>
+        </tr>
+        <tr>
+            <th colspan = "3">Labor Union Fee (of salary in %)</th>
+            <th></th>
+            <th></th>
+            <th><input type = "text" id = "laborFee" name = "laborFee"></th>
+        </tr>
+        <tr>
+            <th colspan = "3">Concessions</th>
+            <th></th>
+            <th></th>
+            <th><input type = "checkbox" name = "discount" id = "check" onclick = "changed()"></th>
+        </tr>
+
+        <div id = "hiddenTable">
+            <table id = "hidden" class = "center" style = "display:none">
+                <tr>
+                    <th>102-2 Taxable income is reduced by 400 AZN</th>
+                    <th></th>
+                    <th><input type = "radio" id = "400" name = "concession" value = "400" class = "concessionClass"></th>
+                </tr>
+                <tr>
+                    <th>102-3 Taxable income is reduced by 200 AZN</th>
+                    <th></th>
+                    <th><input type = "radio" id = "200" name = "concession" value = "200" class = "concessionClass"></th>
+                </tr>
+                <tr>
+                    <th>102-4 Taxable income is reduced by 100 AZN</th>
+                    <th></th>
+                    <th><input type = "radio" id = "100" name = "concession" value = "100" class = "concessionClass"></th>
+                </tr>
+                <tr>
+                    <th>102-5 Taxable income is reduced by 50 AZN</th>
+                    <th></th>
+                    <th><input type = "radio" id = "50" name = "concession" value = "50" class = "concessionClass"></th>
+                </tr>
+            </table>
+        </div>
+    </table>
+    </form>
+</div>
+
+<input type = "submit" id = "calculate" name = "calculate" value = "CALCULATE">
+
+<a href = "gross.html">Nett to Gross Calculator</a>
+
+<div id = "result"></div>
+
+</body>
+</html>

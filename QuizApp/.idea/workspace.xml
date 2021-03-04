@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4e1c1f43-621e-4850-af73-54a60ddf7a1e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Yff1DN78oEIIfaGsXfGxdmUcEp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CrudJpa" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\Desktop\COURSES\Spring2020\Web and Mobile II\MyApp\QuizApp\src\main\webapp\img" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e1c1f43-621e-4850-af73-54a60ddf7a1e" name="Default Changelist" comment="" />
+      <created>1583338351518</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583338351518</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="722" y="74" width="814" height="722" key="#Intentions" timestamp="1584523349349">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="722" y="74" width="814" height="722" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1584523349349" />
+    <state x="755" y="0" width="781" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584802929551">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="755" y="0" width="781" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584802929551" />
+    <state x="958" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1584545950139">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="958" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584545950139" />
+    <state x="933" y="136" key="FileChooserDialogImpl" timestamp="1589728809882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="933" y="136" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589728809882" />
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom" timestamp="1585587530450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585587530450" />
+    <state width="1493" height="214" key="GridCell.Tab.0.center" timestamp="1585587530449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585587530449" />
+    <state width="1493" height="214" key="GridCell.Tab.0.left" timestamp="1585587530449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585587530449" />
+    <state width="1493" height="214" key="GridCell.Tab.0.right" timestamp="1585587530450">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585587530450" />
+    <state x="583" y="66" key="Maven.ArtifactSearchDialog" timestamp="1583338729178">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="583" y="66" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1583338729178" />
+    <state x="824" y="120" width="706" height="589" key="NewModule_or_Project.wizard" timestamp="1584369918294">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="824" y="120" width="706" height="589" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1584369918294" />
+    <state x="418" y="219" key="new project wizard" timestamp="1584976909083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="418" y="219" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584976909083" />
+    <state x="809" y="189" key="run.anything.popup" timestamp="1584548485670">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="809" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1584548485670" />
+    <state x="983" y="206" key="svn.repositoryBrowser" timestamp="1584540951465">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="983" y="206" key="svn.repositoryBrowser/0.0.1536.824@0.0.1536.824" timestamp="1584540951465" />
+  </component>
+</project>

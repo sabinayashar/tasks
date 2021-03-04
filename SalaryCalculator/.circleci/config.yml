@@ -1,0 +1,34 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11.0.1-jdk
+
+    working_directory: ~/dhtest
+
+    steps:
+      - checkout # git pull
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - salarycalc-{{ checksum "pom.xml" }}
+
+      - run: mvn dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: dhtest-{{ checksum "pom.xml" }}
+
+      # package into a jar
+      - run: mvn clean package
+
+      # build and push docker image to docker hub
+      - run: mvn clean compile jib:dockerBuild -Djib.to.auth.username=$DOCKER_USER -Djib.to.auth.password=$DOCKER_PASS -Dimage=sabinayashar/dhtest:$CIRCLE_BUILD_NUM
+
+      # store raw contents of src code
+      - store_artifacts:
+          path: target/classes
+          destination: dhtest

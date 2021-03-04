@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div style = "margin:5px;">
+   <a href = "/" role = "button" class="btn btn-info">Home</a>
+</div>
+<table style="width:80% display:none" class="table table-striped">
+    <thead class="thead-dark">
+        <tr th:if="${students != null}">
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Degree</th>
+            <th scope="col">Major</th>
+            <th scope="col">GPA</th>
+            <th scope="col">Email</th>
+            <th scope="col">Registered Courses</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+            <th th:text="${student.studentId}" scope="row">No data</th>
+            <td th:text="${student.firstName}" >No data</td>
+            <td th:text="${student.lastName}">No data</td>
+            <td th:text="${student.gender}">No data</td>
+            <td th:text="${student.degree}">No data</td>
+            <td th:text="${student.major}">No data</td>
+            <td th:text="${student.gpa}">No data</td>
+            <td th:text="${student.emailAddress}">No data</td>
+            <td>
+                <select>
+                    <option th:each="course : ${student.courses}" th:text="${course.courseName}" th:value="${course.courseId}"></option>
+                </select>
+            </td>
+            <td>
+                <form th:action="@{/student/update/{id}(id=${student.studentId})}" method="GET">
+                    <input type="submit" class="btn btn-primary" value="Modify">
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/student/delete/{id}(id=${student.studentId})}" method="POST">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="row" th:if="${students != null}">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
+        <div class="div-to-align">
+            <a href="/student/add" role="button" class="btn btn-warning btn-primary btn-block">Add student</a>
+        </div>
+    </div>
+</div>
+<table style="width:80% display:none" class="table table-striped">
+    <thead class="thead-dark">
+        <tr th:if="${courses != null}">
+            <th scope="col">#</th>
+            <th scope="col">Course name</th>
+            <th scope="col">Available term</th>
+            <th scope="col">Credit</th>
+            <th scope="col">Type</th>
+            <th scope="col">Instructor</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="course : ${courses}">
+            <th th:text="${course.courseId}" scope="row">No data</th>
+            <td th:text="${course.courseName}" >No data</td>
+            <td th:text="${course.term}">No data</td>
+            <td th:text="${course.courseCredit}">No data</td>
+            <td th:text="${course.courseType}">No data</td>
+            <td th:text="${course.courseInstructor}">No data</td>
+            <td>
+                <form th:action="@{/course/update/{id}(id=${course.courseId})}" method="GET">
+                    <input type="submit" class="btn btn-primary" value="Modify">
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/course/delete/{id}(id=${course.courseId})}" method="POST">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="row" th:if="${courses != null}">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
+        <div class="div-to-align">
+            <a href="/course/add" role="button" class="btn btn-warning btn-primary btn-block">Add course</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

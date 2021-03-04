@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="048919db-f1ea-4a00-a9c9-ecbff033d9a8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aLLewoV3eURbPkcgouTJOCZDJD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../QuizApp" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="048919db-f1ea-4a00-a9c9-ecbff033d9a8" name="Default Changelist" comment="" />
+      <created>1586510026815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586510026815</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="190" y="125" key="#com.intellij.ide.util.MemberChooser" timestamp="1586510409512">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="190" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586510409512" />
+    <state x="933" y="173" key="FileChooserDialogImpl" timestamp="1589724031548">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="933" y="173" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589724031548" />
+    <state width="723" height="142" key="GridCell.Tab.0.bottom" timestamp="1587372105175">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587372105175" />
+    <state width="723" height="142" key="GridCell.Tab.0.center" timestamp="1587372105175">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587372105175" />
+    <state width="723" height="142" key="GridCell.Tab.0.left" timestamp="1587372105175">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587372105175" />
+    <state width="723" height="142" key="GridCell.Tab.0.right" timestamp="1587372105175">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="723" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587372105175" />
+    <state x="809" y="190" key="run.anything.popup" timestamp="1586529110480">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="809" y="190" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586529110480" />
+  </component>
+</project>

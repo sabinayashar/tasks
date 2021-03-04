@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        h1 {color:#FF0000;}
+        .center {margin: auto;
+                 width: 50%;
+                 padding: 10px;}
+    </style>
+</head>
+<body>
+<div style = "margin:5px;">
+    <a href = "/" role = "button" class="btn btn-info">Home</a>
+</div>
+<div class = "center" th:if="${badrequest} != null">
+    <h1 class="display-3">Invalid Request</h1>
+    <a class="lead" th:text="${badrequest}"/>
+</div>
+
+<div class = "center" th:if="${internalerror} != null">
+    <h1 class="display-3">Internal Server Error</h1>
+    <a class="lead" th:text="${internalerror}"/>
+</div>
+
+<div class = "center" th:if="${methodrestriction} != null">
+    <h1 class="display-3">Method is not Allowed</h1>
+    <a class="lead" th:text="${methodrestriction}"/>
+</div>
+<div class = "center" th:if="${message} != null">
+    <h1 class="display-3">Course Deletion is not Allowed</h1>
+    <a class="lead" th:text="${message}"/>
+</div>
+</body>
+</html>

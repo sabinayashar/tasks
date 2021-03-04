@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+    #message  {color:#FF9900;
+              font-weight:bold;}
+    h1 {color:#28A3B4;
+        font-weight:bold;
+        font-size:60px;}
+    h4 {color:#28A3B4;
+        font-size:30px;
+        font-weight:bold;
+        font-style: italic;}
+    p {color:#F1A324;
+       font-size:18px;}
+    form {font-color:#28A3B4;}
+    .forms {margin: auto;
+            width: 60%;
+            padding: 10px;}
+    span {font-weight:bold;}
+</style>
+<body>
+    <div class="jumbotron text-center">
+        <h1 th:text="${welcome}"></h1><h4 th:inline="text">[[${#httpServletRequest.remoteUser}]]</h4>
+        <p>Review, Update, Delete, Search ADA Students & Courses!</p>
+    </div>
+    <div class="alert alert-light" role="alert">
+    <a th:text="${message}" id = "message"></a>
+    </div>
+    <div class = "row">
+        <div class="col-md-6">
+            <a href="/student/list" role="button" class="btn btn-info btn-primary btn-block">All students</a>
+        </div>
+        <div class="col-md-6">
+            <a href="/course/list" role="button" class="btn btn-info btn-primary btn-block">All courses</a>
+        </div>
+    </div>
+    <span>
+    <div class = "forms">
+            <form action="/student/email" method="GET">
+                Get student by email <input type="text" name="email" /> or degree of study <input type="text" name="degree" />
+                <input type="submit" class="btn btn-secondary" value="Search">
+            </form>
+            <br><br>
+            <form action="/student/gpa" method="GET">
+                Get student by gpa interval <input type="text" name="gpa1" /> - <input type="text" name="gpa2" />
+                <input type="submit" class="btn btn-secondary" value="Search">
+            </form>
+            <br><br>
+            <form action="/student/course" method="GET">
+                Get student by taken course <input type="text" name="course1" />
+                <input type="submit" class="btn btn-secondary" value="Search">
+            </form>
+            <br><br>
+            <form action="/course/typeandterm" method="GET">
+                Get course by course type <input type="text" name="type" /> and term <input type="text" name="term" />
+                <input type="submit" class="btn btn-secondary" value="Search">
+            </form>
+    </div>
+    </span>
+    <div class="row">
+        <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
+            <div class="div-to-align">
+            <form th:action="@{/logout}" method="POST">
+            <input type="submit" class="btn btn-dark" value="Log Out"/>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

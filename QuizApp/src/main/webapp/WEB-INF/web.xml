@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>Quiz</servlet-name>
+    <servlet-class>ada.wm2.servlet.QuizServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Quiz</servlet-name>
+    <url-pattern>/quiz</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Authentication</servlet-name>
+    <servlet-class>ada.wm2.servlet.AuthServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Authentication</servlet-name>
+    <url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+
+</web-app>

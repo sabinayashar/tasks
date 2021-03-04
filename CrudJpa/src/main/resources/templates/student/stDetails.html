@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+
+    <style>
+    #message {color:#FF9900;
+              font-weight:bold;}
+    .parent {width: 100%;
+            float:left;}
+
+    .student {float: left;
+              width: 45%;}
+
+    .course {width:48%;
+             float:right;
+             margin-left:5px;}
+
+    .error {color:#FF9900;
+            font-weight:bold;}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class = "parent">
+    <div class = "student">
+        <h1>Student Data</h1>
+        <div class="alert alert-light" role="alert">
+            <a th:text="${message}" id = "message"></a>
+        </div>
+        <br>
+        <form action="#" th:action="@{/student/modifyandsave}" th:object="${student}" method="post">
+            <div th:if="${#fields.hasErrors('*')}" ></div>
+            <table class="table">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th><input type="text" th:field="*{studentId}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('studentId')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('studentId')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Firstname</th>
+                    <th><input type="text" th:field="*{firstName}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('firstName')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('firstName')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Lastname</th>
+                    <th><input type="text" th:field="*{lastName}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('lastName')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('lastName')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Gender</th>
+                    <th><input type="text" th:field="*{gender}"/></th>
+                </tr>
+                <tr>
+                    <th scope="col">Degree</th>
+                    <th><input type="text" th:field="*{degree}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('degree')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('degree')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Major</th>
+                    <th><input type="text" th:field="*{major}"/></th>
+                </tr>
+                <tr>
+                    <th scope="col">GPA</th>
+                    <th><input type="text" th:field="*{gpa}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('gpa')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('gpa')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Email</th>
+                    <th><input type="text" th:field="*{emailAddress}"/></th>
+                </tr>
+                <tr class = "error" th:if="${#fields.hasErrors('emailAddress')}">
+                    <td>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('emailAddress')}" th:text="${err}"></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="col">Courses</th>
+                    <td>
+                        <th:block th:each="course : ${courses}">
+                            <input type="checkbox" id="courses" name="courses" th:value="${course.courseId}" th:checked="${student.courses.contains(course)}"/>
+                            <label th:text="${course.courseName}"></label><br>
+                        </th:block>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th><input type="submit" class="btn btn-success" value="Save"/></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th><a href = "/" role = "button" class="btn btn-info">Home</a></th>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class = "course">
+        <h1>Available Courses</h1>
+        <table style="width:80%" id = "course" class="table table-striped">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Course name</th>
+                <th scope="col">Available term</th>
+                <th scope="col">Credit</th>
+                <th scope="col">Type</th>
+                <th scope="col">Instructor</th>
+            </tr>
+            <tr th:each="course : ${courses}">
+                <th th:text="${course.courseId}" scope="row">No data</th>
+                <td th:text="${course.courseName}" >No data</td>
+                <td th:text="${course.term}">No data</td>
+                <td th:text="${course.courseCredit}">No data</td>
+                <td th:text="${course.courseType}">No data</td>
+                <td th:text="${course.courseInstructor}">No data</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

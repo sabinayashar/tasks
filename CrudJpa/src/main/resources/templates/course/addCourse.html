@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Data</title>
+    <style>
+         #message {color:#FF9900;
+                   font-weight:bold;}
+         .error {color:#FF9900;
+                 font-weight:bold;}
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<h1>Course Data</h1>
+<div class="alert alert-light" role="alert">
+    <a th:text="${message}" id = "message"></a>
+</div>
+<form action="#" th:action="@{/course/save}" th:object="${course}" method="POST">
+    <div th:if="${#fields.hasErrors('*')}"></div>
+    <table class="table">
+        <tr>
+            <th scope="col">ID</th>
+            <th><input type="text" th:field="*{courseId}"/>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('courseId')}">
+            <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('courseId')}" th:text="${err}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Name</th>
+            <th><input type="text" th:field="*{courseName}"/></th>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('courseName')}">
+            <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('courseName')}" th:text="${err}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Available term</th>
+            <th><input type="text" th:field="*{term}"/></th>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('term')}">
+            <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('term')}" th:text="${err}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Credit</th>
+            <th><input type="text" th:field="*{courseCredit}"/></th>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('courseCredit')}">
+             <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('courseCredit')}" th:text="${err}"></li>
+                </ul>
+             </td>
+        </tr>
+        <tr>
+            <th scope="col">Type(MC, TE, FE, GE):</th>
+            <th><input type="text" th:field="*{courseType}"/></th>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('courseType')}">
+            <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('courseType')}" th:text="${err}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">Instructor:</th>
+            <th><input type="text" th:field="*{courseInstructor}"/></th>
+        </tr>
+        <tr class = "error" th:if="${#fields.hasErrors('courseInstructor')}">
+            <td>
+                <ul>
+                    <li th:each="err : ${#fields.errors('courseInstructor')}" th:text="${err}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="submit" class="btn btn-success" value="Save"/></th>
+        </tr>
+        <tr>
+            <th></th>
+            <th><a href = "/" role = "button" class="btn btn-info">Home</a></th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

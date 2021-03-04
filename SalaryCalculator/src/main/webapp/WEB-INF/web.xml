@@ -1,0 +1,28 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>NettSalary</servlet-name>
+    <servlet-class>ada.wm2.servlet.NettSalaryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>NettSalary</servlet-name>
+    <url-pattern>/calculateNett</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>GrossSalary</servlet-name>
+    <servlet-class>ada.wm2.servlet.GrossSalaryServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>GrossSalary</servlet-name>
+    <url-pattern>/calculateGross</url-pattern>
+  </servlet-mapping>
+
+</web-app>
